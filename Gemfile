@@ -1,4 +1,5 @@
-# A sample Gemfile
-source "https://rubygems.org"
+source 'https://rubygems.org'
+gem 'heroku'
+gem 'sinatra'
+gem 'thin'
 ruby '1.9.3'
-# gem "rails"
