@@ -13,7 +13,7 @@ get '/:snipped' do redirect Url[params[:snipped].to_i(36)].original end
 
 error do haml :index end
 
-use_in_file_templates!
+enable :inline_templates
 
 DataMapper.setup(:default, ENV['DATABASE_URL'] || 'mysql://root:root@localhost/snip')
 class Url
