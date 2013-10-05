@@ -1,4 +1,4 @@
-%w(rubygems sinatra dm-core dm-timestamps uri).each  { |lib| require lib}
+%w(rubygems sinatra dm-core dm-timestamps uri data_mapper dm-migrations).each  { |lib| require lib}
 
 get '/' do haml :index end
 
@@ -22,6 +22,8 @@ class Url
   property  :original,    String, :length => 255
   property  :created_at,  DateTime  
   def snipped() self.id.to_s(36) end  
+#DataMapper.finalize
+DataMapper.auto_upgrade!
 end
 
 __END__
